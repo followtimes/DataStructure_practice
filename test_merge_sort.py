@@ -21,13 +21,16 @@ def merge(a, left, mid, right):
         mid += 1
     cnt = 0
     while cnt < len(tmp):
-        a[left] = a[cnt]
+        a[left] = tmp[cnt]
+        print "---"
+        print cnt
+        print len(tmp)
         cnt += 1
         left += 1
 
 def merge_sort(a, left, right):
-    mid = (left + right) / 2
     if left < right:
+        mid = (left + right) / 2
         merge_sort(a, left, mid)
         merge_sort(a, mid+1, right)
         merge(a, left, mid, right)
