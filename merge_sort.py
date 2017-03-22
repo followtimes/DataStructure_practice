@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 #--*-- coding: utf-8 --*--
 
-
+#合并两个有序列表,因为是一个列表当作两个列表，所以需要注意界限
+#注意mid是属于左边列表还是右边的
+#注意最后按照left到right的顺序赋值回来
 def merge(a, left, mid, right):
     low = left
     high = mid + 1
@@ -26,6 +28,7 @@ def merge(a, left, mid, right):
         left += 1
 
 def merge_sort(a, left, right):
+    #当左小于右时，往下分，直到list长度为1，进行合并，变为有序列表，再递归回来继续合并
     if left < right:
         mid = (left + right) / 2
         merge_sort(a, left, mid)
