@@ -1,6 +1,8 @@
 #!/usr/bin/python
 #--*-- coding:utf-8 --*--
 
+#选定最左边为基准，将比基准大的都放到基准右边，比基准小的都放到基准左边，然后递归操作基准左边的数组，基准右边的数组
+
 def quick_sort(a, left, right):
     if left < right:
         key = a[left]
